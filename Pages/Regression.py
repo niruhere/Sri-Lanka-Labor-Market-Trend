@@ -8,6 +8,7 @@ from sklearn.model_selection import train_test_split
 rfmodel= st.sidebar.checkbox('Random Forest Regression')
 url = 'https://raw.githubusercontent.com/niruhere/Sri-Lanka-Labor-Market-Trend/main/ILOSTAT_SriLanka_LabourMarketTrenddata.csv'
 data = pd.read_csv(url)
+
 # Remove unwanted columns "Country" and "Source" from the data
 data.drop(['Country', 'Source'], axis=1, inplace=True)
 
@@ -22,7 +23,6 @@ if rfmodel:
     with st.form("my_form1"):
         
         st.title('Prediction of Labor Force Participation Rate %')
-        
         st.subheader("Please Choose")
         gendergp = st.selectbox("What's your Gender:", ('Female', 'Male'))
         educgp = st.selectbox("What's your Education Level", (data['Education'].unique()))
@@ -52,7 +52,6 @@ if rfmodel:
             url = 'https://raw.githubusercontent.com/niruhere/Sri-Lanka-Labor-Market-Trend/main/random_forest_model.pkl'
             # filename = 'random_forest_model.pkl'
             # loaded_model = pickle.load(open(filename, "rb"))
-            loaded_model = pickle.load(open(url, "rb"))
             # Download the pickle file
             response = requests.get(url)
             
@@ -65,8 +64,6 @@ if rfmodel:
                  print("Failed to download the pickle file")
             
             predicted_LFPR = loaded_model.predict(features)
-           
-            
             # Print the original prediction
             print("Original prediction:", predicted_LFPR)
             
