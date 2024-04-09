@@ -6,7 +6,7 @@ import requests
 import pickle
 from sklearn.model_selection import train_test_split
 rfmodel= st.sidebar.checkbox('Random Forest Regression')
-url = 'ILOSTAT_SriLanka_LabourMarketTrenddata.csv'
+url = 'https://github.com/niruhere/Sri-Lanka-Labor-Market-Trend/blob/main/ILOSTAT_SriLanka_LabourMarketTrenddata.csv'
 data = pd.read_csv(url)
 # Remove unwanted columns "Country" and "Source" from the data
 data.drop(['Country', 'Source'], axis=1, inplace=True)
@@ -27,7 +27,7 @@ if rfmodel:
         gendergp = st.selectbox("What's your Gender:", ('Female', 'Male'))
         educgp = st.selectbox("What's your Education Level", (data['Education'].unique()))
         secgp = st.selectbox("What's your Sector:", ('Area type: Urban', 'Area type: Rural', 'Area type: National'))
-        # yrgp = st.text_input("Select the Year:", max_chars=4)
+        #yrgp = st.text_input("Select the Year:", max_chars=4)
         yrgp = 0
 
         """You selected"""
@@ -49,19 +49,20 @@ if rfmodel:
             X = data.Value
             Y = data.drop(['Value'], axis=1)
             # load pickld model from url/path
-            # url = 'random_forest_model.pkl'
-            filename = 'random_forest_model.pkl'
-            loaded_model = pickle.load(open(filename, "rb"))
+            url = 'https://github.com/niruhere/Sri-Lanka-Labor-Market-Trend/blob/main/random_forest_model.pkl'
+            # filename = 'random_forest_model.pkl'
+            # loaded_model = pickle.load(open(filename, "rb"))
+            loaded_model = pickle.load(open(url, "rb"))
             # Download the pickle file
-            # response = requests.get(url)
+            response = requests.get(url)
             
             # Check if the request was successful
-            # if response.status_code == 200:
-            #     # Load the pickle file
-            #     loaded_model = pickle.loads(response.content)
-            # else:
-            #     # Handle the case when the request fails
-            #     print("Failed to download the pickle file")
+            if response.status_code == 200:
+                # Load the pickle file
+                 loaded_model = pickle.loads(response.content)
+            else:
+                 # Handle the case when the request fails
+                 print("Failed to download the pickle file")
             
             predicted_LFPR = loaded_model.predict(features)
            

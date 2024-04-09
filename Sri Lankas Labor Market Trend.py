@@ -8,7 +8,7 @@ from sklearn.pipeline import Pipeline
 
 st.title("Sri Lanka's Labor Market Trend")
 
-df = pd.read_csv(r'ILOSTAT_SriLanka_LabourMarketTrenddata.csv')
+df = pd.read_csv(r'https://github.com/niruhere/Sri-Lanka-Labor-Market-Trend/blob/main/ILOSTAT_SriLanka_LabourMarketTrenddata.csv')
 
 print ("Dataset Length: ", len(df))
 print ("Dataset Shape: ", df.shape)
