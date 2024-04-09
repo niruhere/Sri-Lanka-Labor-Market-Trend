@@ -9,7 +9,7 @@ rfmodel= st.sidebar.checkbox('Random Forest Regression')
 url = 'https://raw.githubusercontent.com/niruhere/Sri-Lanka-Labor-Market-Trend/main/ILOSTAT_SriLanka_LabourMarketTrenddata.csv'
 data = pd.read_csv(url)
 
-# Remove unwanted columns "Country" and "Source" from the data
+# Remove unwanted columns "Country", "Source" from the data
 data.drop(['Country', 'Source'], axis=1, inplace=True)
 
 # Remove rows having null values(removes 38 out of 1314 records)
