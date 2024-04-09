@@ -8,8 +8,7 @@ from sklearn.pipeline import Pipeline
 
 st.title("Sri Lanka's Labor Market Trend")
 
-df = pd.read_csv('https://github.com/niruhere/Sri-Lanka-Labor-Market-Trend/blob/main/ILOSTAT_SriLanka_LabourMarketTrenddata.csv')
-
+df = pd.read_csv('https://raw.githubusercontent.com/niruhere/Sri-Lanka-Labor-Market-Trend/main/ILOSTAT_SriLanka_LabourMarketTrenddata.csv')
 print ("Dataset Length: ", len(df))
 print ("Dataset Shape: ", df.shape)
 # Remove unwanted columns "Country" and "Source" from the data

@@ -6,7 +6,7 @@ import requests
 import pickle
 from sklearn.model_selection import train_test_split
 rfmodel= st.sidebar.checkbox('Random Forest Regression')
-url = 'https://github.com/niruhere/Sri-Lanka-Labor-Market-Trend/blob/main/ILOSTAT_SriLanka_LabourMarketTrenddata.csv'
+url = 'https://raw.githubusercontent.com/niruhere/Sri-Lanka-Labor-Market-Trend/main/ILOSTAT_SriLanka_LabourMarketTrenddata.csv'
 data = pd.read_csv(url)
 # Remove unwanted columns "Country" and "Source" from the data
 data.drop(['Country', 'Source'], axis=1, inplace=True)
@@ -49,7 +49,7 @@ if rfmodel:
             X = data.Value
             Y = data.drop(['Value'], axis=1)
             # load pickld model from url/path
-            url = 'https://github.com/niruhere/Sri-Lanka-Labor-Market-Trend/blob/main/random_forest_model.pkl'
+            url = 'https://raw.githubusercontent.com/niruhere/Sri-Lanka-Labor-Market-Trend/main/random_forest_model.pkl'
             # filename = 'random_forest_model.pkl'
             # loaded_model = pickle.load(open(filename, "rb"))
             loaded_model = pickle.load(open(url, "rb"))
