@@ -49,7 +49,7 @@ if rfmodel:
             X = data.Value
             Y = data.drop(['Value'], axis=1)
             # load pickld model from url/path
-            url = 'https://raw.githubusercontent.com/niruhere/Sri-Lanka-Labor-Market-Trend/main/random_forest_model.pkl'
+            url = 'https://raw.githubusercontent.com/niruhere/Sri-Lanka-Labor-Market-Trend/main/random_forest_model.sav'
             # filename = 'random_forest_model.pkl'
             # loaded_model = pickle.load(open(filename, "rb"))
             # Download the pickle file
