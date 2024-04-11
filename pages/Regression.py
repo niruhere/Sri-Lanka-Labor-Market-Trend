@@ -27,14 +27,14 @@ if rfmodel:
         gendergp = st.selectbox("What's your Gender:", ('Female', 'Male'))
         educgp = st.selectbox("What's your Education Level", (data['Education'].unique()))
         secgp = st.selectbox("What's your Sector:", ('Area type: Urban', 'Area type: Rural', 'Area type: National'))
-        #yrgp = st.text_input("Select the Year:", max_chars=4)
-        yrgp = 0
+        yrgp = st.text_input("Select the Year:", max_chars=4)
+        # yrgp = 0
 
         """You selected"""
         st.write("Gender:", gendergp )
         st.write("Education Level: ",  educgp)
         st.write("Sector: ",  secgp)
-        # st.write("Year: ", yrgp)
+        st.write("Year: ", yrgp)
         
         submitted = st.form_submit_button("Submit")
         if submitted:
@@ -43,7 +43,7 @@ if rfmodel:
                         'Sector': secgp,
                         'Year': yrgp}
             features = pd.DataFrame(inputdata, index=[0])
-            st.dataframe(features, column_order=['Gender', 'Education', 'Sector'], column_config={'Year': None}, hide_index=[0])
+            st.dataframe(features, column_order=['Gender', 'Education', 'Sector', 'Year'], hide_index=[0])
             
            
             X = data.Value
