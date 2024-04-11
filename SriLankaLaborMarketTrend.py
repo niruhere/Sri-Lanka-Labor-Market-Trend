@@ -20,9 +20,9 @@ df.dropna(axis=0, inplace=True)
 # Rename column "Area type" to "Sector", "Sex" to Gender
 df.rename(columns = {'Area type':'Sector', 'Sex': 'Gender'}, inplace = True)
 
-st.subheader('Labor Force Participation Rate in %'' for Gender, Education level, Sector')
+st.subheader('Labor Force Participation Rate in %'' for Gender, Education level and Sector')
 st.write(df)
-st.subheader('Labour Force Participation rate(LFPR%) by Gender, Sector at different Education Level')
+# st.subheader('Labour Force Participation rate (LFPR%) by Gender, Sector at different Education Level')
 
 # Set up the layout
 fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(14, 7))
