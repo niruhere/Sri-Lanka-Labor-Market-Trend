@@ -26,7 +26,7 @@ Here the Categorical Columns are Gender, Sector and Education Level.
 ### 3.Model selection, Training and Evaluation: 
 The dataset is divided into training , validation and test dataset. Using the training set, the model is trained for different machine learning algorithms like Linear Regression, Decision Tree Regression, Random Forest Regression and Support Vector Machine Regression. The model is used to predict values for data in the validation set and below are the metrics obtained ( Mean Absolute Error, Mean Squared Error and R2 Error ). 
 | Model                     |Mean Absolute Error |Mean Squared Error| R2 Score | 
-| :--------------           | :--------------:   | ---------------: |:--------:|
+| :--------------           | :--------------:   |:---------------: |:--------:|
 | Linear Regression         |8.47                |106.75            |0.80      |
 | Random Forest Regressor   |1.79                |15.21             |0.97      |
 | Decision Tree Regressor   |10.24               |217.78            |0.59      |
